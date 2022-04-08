@@ -53,11 +53,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rendszergazda\\Desktop\\GuiJatek\\LifeAtNik\\LifeAtNik\\LifeAtNik.csproj",
+      "projectUniqueName": "C:\\Users\\Rendszergazda\\Desktop\\GuiJatek\\gitrepo\\LifeAtNik\\LifeAtNik\\LifeAtNik.csproj",
       "projectName": "LifeAtNik",
-      "projectPath": "C:\\Users\\Rendszergazda\\Desktop\\GuiJatek\\LifeAtNik\\LifeAtNik\\LifeAtNik.csproj",
+      "projectPath": "C:\\Users\\Rendszergazda\\Desktop\\GuiJatek\\gitrepo\\LifeAtNik\\LifeAtNik\\LifeAtNik.csproj",
       "packagesPath": "C:\\Users\\Rendszergazda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rendszergazda\\Desktop\\GuiJatek\\LifeAtNik\\LifeAtNik\\obj\\",
+      "outputPath": "C:\\Users\\Rendszergazda\\Desktop\\GuiJatek\\gitrepo\\LifeAtNik\\LifeAtNik\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

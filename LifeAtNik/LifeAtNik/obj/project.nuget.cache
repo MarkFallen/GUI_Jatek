@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1dywBCEuwGwuWG81TajYPK3wtWn6/MaeYNbOqrDN0bGE+5XwV3/lltsj4F8zZ5dXDXxRzGxJea5vLakeb8CCqg==",
+  "dgSpecHash": "HOxj4fZ0zjJXU/6m1LS9tr2ozMd/6xJGja9KiEWh1363PFSa11AHtUXqWyb42oW1ul2MeEwJEJ7ZUXkpprUeyA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rendszergazda\\Desktop\\GuiJatek\\LifeAtNik\\LifeAtNik\\LifeAtNik.csproj",
+  "projectFilePath": "C:\\Users\\Rendszergazda\\Desktop\\GuiJatek\\gitrepo\\LifeAtNik\\LifeAtNik\\LifeAtNik.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rendszergazda\\.nuget\\packages\\microsoft.toolkit.mvvm\\7.1.2\\microsoft.toolkit.mvvm.7.1.2.nupkg.sha512"
   ],
