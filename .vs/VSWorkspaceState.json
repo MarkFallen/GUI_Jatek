@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\LifeAtNik",
+    "\\LifeAtNik\\LifeAtNik",
+    "\\LifeAtNik\\LifeAtNik\\Enums",
+    "\\LifeAtNik\\LifeAtNik\\Logics"
   ],
+  "SelectedNode": "\\LifeAtNik\\LifeAtNik\\AssemblyInfo.cs",
   "PreviewInSolutionExplorer": false
 }

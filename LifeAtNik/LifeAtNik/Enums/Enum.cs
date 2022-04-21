@@ -20,7 +20,7 @@ namespace LifeAtNik.Enums
                 //    return TileType.floor;
     public enum TileType
     {
-        player, wall, glassWall, floor, enemy, table, chair, desk, door, stairs, levelswap, openDoor, openDoorWithPlayer
+        player, wall, glassWall, floor, enemy, table, chair, desk, door, stairs, levelswap
     }
     public enum Direction
     {
