@@ -7,11 +7,37 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
+    <None Remove="PNGs\door.png" />
+    <None Remove="PNGs\floor.png" />
+    <None Remove="PNGs\floor2.png" />
+    <None Remove="PNGs\glass.png" />
+    <None Remove="PNGs\player.png" />
+    <None Remove="PNGs\wall.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="PNGs\" />
+    <Content Include="PNGs\door.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\floor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\floor2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\glass.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\player.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\wall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
   </ItemGroup>
 
 </Project>

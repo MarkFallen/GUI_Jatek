@@ -1,4 +1,5 @@
-﻿using LifeAtNik.Interface;
+﻿using LifeAtNik.Enums;
+using LifeAtNik.Interface;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using LifeAtNik.Logics;
 
 namespace LifeAtNik.Renderers
 {
@@ -15,6 +17,7 @@ namespace LifeAtNik.Renderers
     {
         IGameModel model;
         Size size;
+        string GD = "stay";
 
         public void Resize(Size size)
         {
@@ -33,8 +36,10 @@ namespace LifeAtNik.Renderers
                 double rectWidth = size.Width / model.GameMatrix.GetLength(1);
                 double rectHeight = size.Height / model.GameMatrix.GetLength(0);
 
-                drawingContext.DrawRectangle(Brushes.Black, new Pen(Brushes.Black, 0),
-                    new Rect(0, 0, size.Width, size.Height));
+
+                // Kristof -> ezt kiszedtem
+                //drawingContext.DrawRectangle(Brushes.Black, new Pen(Brushes.Black, 0),
+                //    new Rect(0, 0, size.Width, size.Height));
 
 
                 //map kirajzolása
@@ -77,6 +82,10 @@ namespace LifeAtNik.Renderers
                                 brush = new ImageBrush
                                     (new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "stairs.png"), UriKind.RelativeOrAbsolute)));
                                 break;
+                            case Enums.TileType.stairs1:
+                                brush = new ImageBrush
+                                    (new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "stairs1.png"), UriKind.RelativeOrAbsolute)));
+                                break;
                             default:
                                 break;
                         }
@@ -88,8 +97,15 @@ namespace LifeAtNik.Renderers
                     }
                 }
                 //player kirajzolása
+
+
                 ImageBrush playerbrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "player.png"), UriKind.RelativeOrAbsolute)));
                 drawingContext.DrawRectangle(playerbrush , new Pen(Brushes.Black, 0), new Rect(model.WhereAmI[1] * rectWidth, model.WhereAmI[0] * rectHeight, rectWidth, rectHeight));
+
+                if (GoingDirection == "stay")
+                {
+
+                }
 
             }
         }

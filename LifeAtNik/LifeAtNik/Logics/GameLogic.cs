@@ -6,12 +6,18 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace LifeAtNik.Logics
 {
+    
+
     public class GameLogic : IGameControl, IGameModel
     {
         //külön mátrixot használunk a map-nek meg a playernek, meg az npc-knek
+
+        private string OnWhichMapAmI = "aula";
+        public Direction GoingDirection;
 
         public TileType[,] GameMatrix { get; set; } //map
         public int[,] CharMatrix { get; set; } //player -- ahol 1es van a mátrixban, ott van a player, egyébként 0
@@ -41,6 +47,7 @@ namespace LifeAtNik.Logics
                 case Direction.up:
                     if (i - 1 >= 0)
                     {
+                        GoingDirection = Direction.up;
                         i--;
                     }
                     break;
@@ -48,18 +55,21 @@ namespace LifeAtNik.Logics
                     if (i + 1 < GameMatrix.GetLength(0))
                     {
                         i++;
+                        GoingDirection = Direction.down;
                     }
                     break;
                 case Direction.left:
                     if (j - 1 >= 0)
                     {
                         j--;
+                        GoingDirection = Direction.left;
                     }
                     break;
                 case Direction.right:
                     if (j + 1 < GameMatrix.GetLength(1))
                     {
                         j++;
+                        GoingDirection = Direction.right;
                     }
                     break;
                 default:
@@ -73,11 +83,50 @@ namespace LifeAtNik.Logics
                 WhereAmI[1] = j;
 
             }
+            else if (GameMatrix[i, j] == TileType.stairs) 
+            {
+                CharMatrix[old_i, old_j] = 0;
+                CharMatrix[i, j] = 1;
+                WhereAmI[0] = i;
+                WhereAmI[1] = j;
+            }
+            else if (GameMatrix[i, j] == TileType.stairs1)
+            {
+                CharMatrix[old_i, old_j] = 0;
+                CharMatrix[i, j] = 1;
+                WhereAmI[0] = i;
+                WhereAmI[1] = j;
+            }
             else if (GameMatrix[i, j] == TileType.levelswap)
             {
 
                 //TODO
                 LoadLevel("lol");
+            }
+            else if (GameMatrix[i, j] == TileType.door)
+            {
+
+                //TODO
+                if (OnWhichMapAmI == "aula")
+                {
+                    if (i == 1 || j == 15)
+                    {
+                        OnWhichMapAmI = "F01";
+                        LoadLevel(Path.Combine(DirPath, "Levels", "F01.lvl"));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Its Locked!", "Life At Nik");
+                    }
+                }
+                else if (OnWhichMapAmI == "F01")
+                {
+                    OnWhichMapAmI = "aula";
+                    LoadLevel(Path.Combine(DirPath, "Levels", "aula.lvl"));
+                    WhereAmI[0] = 1;
+                    WhereAmI[1] = 15;
+                }
+                
             }
         }
         private void LoadLevel(string path)
@@ -115,6 +164,8 @@ namespace LifeAtNik.Logics
                 case 'G': return TileType.glassWall;
                 case 'L': return TileType.levelswap;
                 case 'T': return TileType.table;
+                case 'S': return TileType.stairs;
+                case 'R': return TileType.stairs1;
                 default:
                     return TileType.floor;
             }
