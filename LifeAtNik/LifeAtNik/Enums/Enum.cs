@@ -18,11 +18,13 @@ namespace LifeAtNik.Enums
     //case 'O': return TileType.openDoor;
     //case 'S': return TileType.stairs;
     //case 'R': return TileType.stairs1;
+    //case 'B': return TileType.stairs_end;
+    //case 'H': return TileType.end_floor;
     //default:
     //    return TileType.floor;
     public enum TileType
     {
-        player, wall, glassWall, floor, enemy, table, chair, desk, door, stairs, stairs1, levelswap
+        player, wall, glassWall, floor, enemy, table, chair, desk, door, stairs, stairs1, end_floor, stairs_end, levelswap
     }
     public enum Direction
     {

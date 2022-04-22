@@ -10,14 +10,15 @@ using System.Windows;
 
 namespace LifeAtNik.Logics
 {
-    
 
     public class GameLogic : IGameControl, IGameModel
     {
         //külön mátrixot használunk a map-nek meg a playernek, meg az npc-knek
 
         private string OnWhichMapAmI = "aula";
-        public Direction GoingDirection;
+        private string GoingDirection = "stay";
+
+        public string goingDirection { get { return GoingDirection; } }
 
         public TileType[,] GameMatrix { get; set; } //map
         public int[,] CharMatrix { get; set; } //player -- ahol 1es van a mátrixban, ott van a player, egyébként 0
@@ -47,32 +48,33 @@ namespace LifeAtNik.Logics
                 case Direction.up:
                     if (i - 1 >= 0)
                     {
-                        GoingDirection = Direction.up;
+                        GoingDirection = "up";
                         i--;
                     }
                     break;
                 case Direction.down:
                     if (i + 1 < GameMatrix.GetLength(0))
                     {
+                        GoingDirection = "down";
                         i++;
-                        GoingDirection = Direction.down;
                     }
                     break;
                 case Direction.left:
                     if (j - 1 >= 0)
                     {
+                        GoingDirection = "left";
                         j--;
-                        GoingDirection = Direction.left;
                     }
                     break;
                 case Direction.right:
                     if (j + 1 < GameMatrix.GetLength(1))
                     {
+                        GoingDirection = "right";
                         j++;
-                        GoingDirection = Direction.right;
                     }
                     break;
                 default:
+                    GoingDirection = "stay";
                     break;
             }
             if (GameMatrix[i, j] == TileType.floor)
@@ -103,6 +105,23 @@ namespace LifeAtNik.Logics
                 //TODO
                 LoadLevel("lol");
             }
+            else if (GameMatrix[i, j] == TileType.stairs_end)
+            {
+
+                if (OnWhichMapAmI == "aula")
+                {
+                    OnWhichMapAmI = "first_floor";
+                    LoadLevel(Path.Combine(DirPath, "Levels", "first_floor.lvl"));
+                    //LoadLevel(Path.Combine(DirPath, "Levels", "lol.lvl"));
+                }
+                else if (OnWhichMapAmI == "first_floor")
+                {
+                    OnWhichMapAmI = "aula";
+                    LoadLevel(Path.Combine(DirPath, "Levels", "aula.lvl"));
+                    WhereAmI[0] = 3;
+                    WhereAmI[1] = 17;
+                }
+            }
             else if (GameMatrix[i, j] == TileType.door)
             {
 
@@ -127,6 +146,23 @@ namespace LifeAtNik.Logics
                     WhereAmI[1] = 15;
                 }
                 
+            }
+            else if (GameMatrix[i, j] == TileType.end_floor)
+            {
+                if (OnWhichMapAmI == "first_floor")
+                {
+                    OnWhichMapAmI = "first_floor1";
+                    LoadLevel(Path.Combine(DirPath, "Levels", "first_floor1.lvl"));
+                    WhereAmI[0] = 1;
+                    WhereAmI[1] = 7;
+                }
+                else if (OnWhichMapAmI == "first_floor1")
+                {
+                    OnWhichMapAmI = "first_floor";
+                    LoadLevel(Path.Combine(DirPath, "Levels", "first_floor.lvl"));
+                    WhereAmI[0] = 10;
+                    WhereAmI[1] = 7;
+                }
             }
         }
         private void LoadLevel(string path)
@@ -166,6 +202,8 @@ namespace LifeAtNik.Logics
                 case 'T': return TileType.table;
                 case 'S': return TileType.stairs;
                 case 'R': return TileType.stairs1;
+                case 'B': return TileType.stairs_end;
+                case 'H': return TileType.end_floor;
                 default:
                     return TileType.floor;
             }

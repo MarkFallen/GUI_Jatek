@@ -10,14 +10,15 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using LifeAtNik.Logics;
+using System.Timers;
 
 namespace LifeAtNik.Renderers
 {
-    class Display : FrameworkElement
+    public class Display : FrameworkElement
     {
         IGameModel model;
         Size size;
-        string GD = "stay";
+
 
         public void Resize(Size size)
         {
@@ -28,8 +29,19 @@ namespace LifeAtNik.Renderers
         {
             this.model = model;
         }
+
+
+
+        bool step_down = false;
+        bool step_up = false;
+        bool step_left = false;
+        bool step_right = false;
+
+
         protected override void OnRender(DrawingContext drawingContext)
         {
+
+
             base.OnRender(drawingContext);
             if (model != null && size.Width > 50 && size.Height > 50)
             {
@@ -86,6 +98,14 @@ namespace LifeAtNik.Renderers
                                 brush = new ImageBrush
                                     (new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "stairs1.png"), UriKind.RelativeOrAbsolute)));
                                 break;
+                            case Enums.TileType.stairs_end:
+                                brush = new ImageBrush
+                                    (new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "stairs.png"), UriKind.RelativeOrAbsolute)));
+                                break;
+                            case Enums.TileType.end_floor:
+                                brush = new ImageBrush
+                                    (new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "floor.png"), UriKind.RelativeOrAbsolute)));
+                                break;
                             default:
                                 break;
                         }
@@ -96,17 +116,86 @@ namespace LifeAtNik.Renderers
                                     );
                     }
                 }
+
+
                 //player kirajzolása
 
 
-                ImageBrush playerbrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "player.png"), UriKind.RelativeOrAbsolute)));
-                drawingContext.DrawRectangle(playerbrush , new Pen(Brushes.Black, 0), new Rect(model.WhereAmI[1] * rectWidth, model.WhereAmI[0] * rectHeight, rectWidth, rectHeight));
 
-                if (GoingDirection == "stay")
+
+
+
+                if (model.goingDirection == "stay")
                 {
+                    ImageBrush playerbrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "player.png"), UriKind.RelativeOrAbsolute)));
+                    drawingContext.DrawRectangle(playerbrush, new Pen(Brushes.Black, 0), new Rect(model.WhereAmI[1] * rectWidth, model.WhereAmI[0] * rectHeight, rectWidth, rectHeight));
+                }
+                else if (model.goingDirection == "up")
+                {
+                    if (step_up)
+                    {
+                        ImageBrush playerbrushB = new ImageBrush(new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "playerB.png"), UriKind.RelativeOrAbsolute)));
+                        drawingContext.DrawRectangle(playerbrushB, new Pen(Brushes.Black, 0), new Rect(model.WhereAmI[1] * rectWidth, model.WhereAmI[0] * rectHeight, rectWidth, rectHeight));
+                        step_up = false;
+                    }
+                    else
+                    {
+                        ImageBrush playerbrushBR = new ImageBrush(new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "playerBR.png"), UriKind.RelativeOrAbsolute)));
+                        drawingContext.DrawRectangle(playerbrushBR, new Pen(Brushes.Black, 0), new Rect(model.WhereAmI[1] * rectWidth, model.WhereAmI[0] * rectHeight, rectWidth, rectHeight));
+                        step_up = true;
+                    }
+                }
+                else if (model.goingDirection == "down")
+                {
+                    if (step_down)
+                    {
+                        ImageBrush playerbrushR1 = new ImageBrush(new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "playerR1.png"), UriKind.RelativeOrAbsolute)));
+                        drawingContext.DrawRectangle(playerbrushR1, new Pen(Brushes.Black, 0), new Rect(model.WhereAmI[1] * rectWidth, model.WhereAmI[0] * rectHeight, rectWidth, rectHeight));
+                        step_down = false;
+                    }
+                    else
+                    {
+                        ImageBrush playerbrushR2 = new ImageBrush(new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "playerR2.png"), UriKind.RelativeOrAbsolute)));
+                        drawingContext.DrawRectangle(playerbrushR2, new Pen(Brushes.Black, 0), new Rect(model.WhereAmI[1] * rectWidth, model.WhereAmI[0] * rectHeight, rectWidth, rectHeight));
+                        step_down = true;
+                    }
+
+                    //ImageBrush playerbrush = new ImageBrush(new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "player.png"), UriKind.RelativeOrAbsolute)));
+                    //drawingContext.DrawRectangle(playerbrush, new Pen(Brushes.Black, 0), new Rect(model.WhereAmI[1] * rectWidth, model.WhereAmI[0] * rectHeight, rectWidth, rectHeight));
+
+
 
                 }
-
+                else if (model.goingDirection == "left")
+                {
+                    if (step_left)
+                    {
+                        ImageBrush playerbrushLR1 = new ImageBrush(new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "playerLR1.png"), UriKind.RelativeOrAbsolute)));
+                        drawingContext.DrawRectangle(playerbrushLR1, new Pen(Brushes.Black, 0), new Rect(model.WhereAmI[1] * rectWidth, model.WhereAmI[0] * rectHeight, rectWidth, rectHeight));
+                        step_left = false;
+                    }
+                    else
+                    {
+                        ImageBrush playerbrushLR2 = new ImageBrush(new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "playerLR2.png"), UriKind.RelativeOrAbsolute)));
+                        drawingContext.DrawRectangle(playerbrushLR2, new Pen(Brushes.Black, 0), new Rect(model.WhereAmI[1] * rectWidth, model.WhereAmI[0] * rectHeight, rectWidth, rectHeight));
+                        step_left = true;
+                    }
+                }
+                else if (model.goingDirection == "right")
+                {
+                    if (step_right)
+                    {
+                        ImageBrush playerbrushRR1 = new ImageBrush(new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "playerRR1.png"), UriKind.RelativeOrAbsolute)));
+                        drawingContext.DrawRectangle(playerbrushRR1, new Pen(Brushes.Black, 0), new Rect(model.WhereAmI[1] * rectWidth, model.WhereAmI[0] * rectHeight, rectWidth, rectHeight));
+                        step_right = false;
+                    }
+                    else
+                    {
+                        ImageBrush playerbrushRR2 = new ImageBrush(new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "playerRR2.png"), UriKind.RelativeOrAbsolute)));
+                        drawingContext.DrawRectangle(playerbrushRR2, new Pen(Brushes.Black, 0), new Rect(model.WhereAmI[1] * rectWidth, model.WhereAmI[0] * rectHeight, rectWidth, rectHeight));
+                        step_right = true;
+                    }
+                }
             }
         }
     }

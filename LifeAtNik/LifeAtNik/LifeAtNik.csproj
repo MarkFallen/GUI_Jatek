@@ -7,15 +7,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="PNGs\chair.png" />
+    <None Remove="PNGs\desk.png" />
     <None Remove="PNGs\door.png" />
     <None Remove="PNGs\floor.png" />
     <None Remove="PNGs\floor2.png" />
     <None Remove="PNGs\glass.png" />
     <None Remove="PNGs\player.png" />
+    <None Remove="PNGs\playerB.png" />
+    <None Remove="PNGs\playerBR.png" />
+    <None Remove="PNGs\playerL.png" />
+    <None Remove="PNGs\playerLR1.png" />
+    <None Remove="PNGs\playerLR2.png" />
+    <None Remove="PNGs\playerR.png" />
+    <None Remove="PNGs\playerR1.png" />
+    <None Remove="PNGs\playerR2.png" />
+    <None Remove="PNGs\playerRR1.png" />
+    <None Remove="PNGs\playerRR2.png" />
+    <None Remove="PNGs\stairs.png" />
+    <None Remove="PNGs\stairs1.png" />
+    <None Remove="PNGs\table.png" />
     <None Remove="PNGs\wall.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="PNGs\chair.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\desk.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="PNGs\door.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -31,6 +52,45 @@
     <Content Include="PNGs\player.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="PNGs\playerB.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\playerBR.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\playerL.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\playerLR1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\playerLR2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\playerR.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\playerR1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\playerR2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\playerRR1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\playerRR2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\stairs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\stairs1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\table.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="PNGs\wall.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -38,6 +98,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Levels\first_floor.lvl">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
