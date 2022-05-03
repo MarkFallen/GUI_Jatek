@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\LifeAtNik",
+    "\\LifeAtNik\\LifeAtNik",
+    "\\LifeAtNik\\LifeAtNik\\Logics"
   ],
+  "SelectedNode": "\\LifeAtNik\\LifeAtNik\\Logics\\GameLogic.cs",
   "PreviewInSolutionExplorer": false
 }

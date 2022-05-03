@@ -11,6 +11,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pngs/chair.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pngs/desk.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pngs/door.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pngs/enemy01.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pngs/floor.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pngs/floor2.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pngs/glass.png")]

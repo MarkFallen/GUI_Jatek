@@ -106,6 +106,10 @@ namespace LifeAtNik.Renderers
                                 brush = new ImageBrush
                                     (new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "floor.png"), UriKind.RelativeOrAbsolute)));
                                 break;
+                            case Enums.TileType.enemy:
+                                brush = new ImageBrush
+                                    (new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "enemy01.png"), UriKind.RelativeOrAbsolute)));
+                                break;
                             default:
                                 break;
                         }

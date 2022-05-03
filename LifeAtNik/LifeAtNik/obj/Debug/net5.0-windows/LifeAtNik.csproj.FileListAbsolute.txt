@@ -94,3 +94,6 @@ C:\Users\juhas\Source\Repos\Krlst0FF\GUI_20212202_Y862SF\LifeAtNik\LifeAtNik\bin
 C:\Users\juhas\Source\Repos\Krlst0FF\GUI_20212202_Y862SF\LifeAtNik\LifeAtNik\bin\Debug\net5.0-windows\PNGs\stairs.png
 C:\Users\juhas\Source\Repos\Krlst0FF\GUI_20212202_Y862SF\LifeAtNik\LifeAtNik\bin\Debug\net5.0-windows\PNGs\stairs1.png
 C:\Users\juhas\Source\Repos\Krlst0FF\GUI_20212202_Y862SF\LifeAtNik\LifeAtNik\bin\Debug\net5.0-windows\PNGs\table.png
+C:\Users\juhas\Source\Repos\Krlst0FF\GUI_20212202_Y862SF\LifeAtNik\LifeAtNik\bin\Debug\net5.0-windows\PNGs\enemy01.png
+C:\Users\juhas\Source\Repos\Krlst0FF\GUI_20212202_Y862SF\LifeAtNik\LifeAtNik\obj\Debug\net5.0-windows\FightWindow.g.cs
+C:\Users\juhas\Source\Repos\Krlst0FF\GUI_20212202_Y862SF\LifeAtNik\LifeAtNik\obj\Debug\net5.0-windows\FightWindow.baml

@@ -147,6 +147,12 @@ namespace LifeAtNik.Logics
                 }
                 
             }
+            else if (GameMatrix[i, j] == TileType.enemy)
+            {
+                // FightWindow megnyitása
+                FightWindow asd = new FightWindow();
+                asd.Show();
+            }
             else if (GameMatrix[i, j] == TileType.end_floor)
             {
                 if (OnWhichMapAmI == "first_floor")

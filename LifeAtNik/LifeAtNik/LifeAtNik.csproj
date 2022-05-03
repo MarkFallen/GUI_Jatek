@@ -10,6 +10,7 @@
     <None Remove="PNGs\chair.png" />
     <None Remove="PNGs\desk.png" />
     <None Remove="PNGs\door.png" />
+    <None Remove="PNGs\enemy01.png" />
     <None Remove="PNGs\floor.png" />
     <None Remove="PNGs\floor2.png" />
     <None Remove="PNGs\glass.png" />
@@ -38,6 +39,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="PNGs\door.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PNGs\enemy01.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="PNGs\floor.png">
