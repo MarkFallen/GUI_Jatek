@@ -18,6 +18,14 @@ namespace LifeAtNik.Logics
         private string OnWhichMapAmI = "aula";
         private string GoingDirection = "stay";
 
+        private int ero = 50;
+        private int tudas = 0;
+        private int motiv = 100;
+
+        public int Ero { get { return ero; } set { ero = int.Parse(value.ToString()); } }
+        public int Tudas { get { return tudas; } set { tudas = int.Parse(value.ToString()); } }
+        public int Motiv { get { return motiv; } set { motiv = int.Parse(value.ToString()); } }
+
         public string goingDirection { get { return GoingDirection; } }
 
         public TileType[,] GameMatrix { get; set; } //map
