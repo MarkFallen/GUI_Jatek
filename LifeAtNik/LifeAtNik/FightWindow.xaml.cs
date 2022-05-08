@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LifeAtNik.Logics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,55 @@ namespace LifeAtNik
     /// </summary>
     public partial class FightWindow : Window
     {
-        public FightWindow()
+        static Random r = new Random();
+        int szam;
+        public FightWindow(string map)
         {
             InitializeComponent();
+            QuestionLogic qlogic = new QuestionLogic();
+            Exercise e = qlogic.GiveQuestion(map);
+            q.Content = e.Question;
+            szam = r.Next(1, 5);
+            switch (szam)
+            {
+                case 1:
+                    bt_q1.Content = e.Right;
+                    bt_q2.Content = e.Wrongs[0];
+                    bt_q3.Content = e.Wrongs[1];
+                    bt_q4.Content = e.Wrongs[2];
+                    break;
+                case 2:
+                    bt_q2.Content = e.Right;
+                    bt_q1.Content = e.Wrongs[0];
+                    bt_q3.Content = e.Wrongs[1];
+                    bt_q4.Content = e.Wrongs[2];
+                    break;
+                case 3:
+                    bt_q3.Content = e.Right;
+                    bt_q2.Content = e.Wrongs[0];
+                    bt_q1.Content = e.Wrongs[1];
+                    bt_q4.Content = e.Wrongs[2];
+                    break;
+                default:
+                    bt_q4.Content = e.Right;
+                    bt_q2.Content = e.Wrongs[0];
+                    bt_q3.Content = e.Wrongs[1];
+                    bt_q1.Content = e.Wrongs[2];
+                    break;
+            }
+        }
+        public void Check(object sender, RoutedEventArgs e)
+        {
+            Button b = (sender as Button);
+
+            if (int.Parse(b.Tag.ToString()) == szam)
+            {
+                //jó válasz
+            }
+            else
+            {
+                //rossz válasz
+            }
         }
     }
 }

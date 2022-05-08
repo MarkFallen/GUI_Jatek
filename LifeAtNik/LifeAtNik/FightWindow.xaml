@@ -17,11 +17,11 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Content="kérdés" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Content="kérdés" x:Name="q" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Label Content="Tárgy" Grid.Row="0" Grid.Column="0" />
-        <Button x:Name="bt_q1" Content="majd" Grid.Row="1" Grid.Column="0" />
-        <Button x:Name="bt_q2" Content="majd" Grid.Row="1" Grid.Column="1" />
-        <Button x:Name="bt_q3" Content="majd" Grid.Row="2" Grid.Column="0" />
-        <Button x:Name="bt_q4" Content="majd" Grid.Row="2" Grid.Column="1" />
+        <Button x:Name="bt_q1" Click="Check" Content="majd" Grid.Row="1" Grid.Column="0" Tag="1"/>
+        <Button x:Name="bt_q2" Click="Check" Content="majd" Grid.Row="1" Grid.Column="1" Tag="2"/>
+        <Button x:Name="bt_q3" Click="Check" Content="majd" Grid.Row="2" Grid.Column="0" Tag="3"/>
+        <Button x:Name="bt_q4" Click="Check" Content="majd" Grid.Row="2" Grid.Column="1" Tag="4"/>
     </Grid>
 </Window>
