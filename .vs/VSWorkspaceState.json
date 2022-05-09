@@ -3,8 +3,10 @@
     "",
     "\\LifeAtNik",
     "\\LifeAtNik\\LifeAtNik",
-    "\\LifeAtNik\\LifeAtNik\\Logics"
+    "\\LifeAtNik\\LifeAtNik\\Controller",
+    "\\LifeAtNik\\LifeAtNik\\Logics",
+    "\\LifeAtNik\\LifeAtNik\\Renderers"
   ],
-  "SelectedNode": "\\LifeAtNik\\LifeAtNik\\Logics\\GameLogic.cs",
+  "SelectedNode": "\\LifeAtNik\\LifeAtNik.sln",
   "PreviewInSolutionExplorer": false
 }

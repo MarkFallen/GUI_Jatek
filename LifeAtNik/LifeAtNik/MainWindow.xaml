@@ -7,7 +7,7 @@
         xmlns:renderer="clr-namespace:LifeAtNik.Renderers"
         xmlns:logic="clr-namespace:LifeAtNik.Logics"
         mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="1600" KeyDown="Window_KeyDown" SizeChanged="Window_SizeChanged" Loaded="Window_Loaded">
+        Title="MainWindow" Height="900" Width="1600" KeyDown="Window_KeyDown" SizeChanged="Window_SizeChanged" Loaded="Window_Loaded" WindowState="Maximized" >
     <Window.DataContext>
         <logic:GameLogic />
     </Window.DataContext>
@@ -23,7 +23,7 @@
             <RowDefinition Height="21*"/>
         </Grid.RowDefinitions>
 
-        <Button Content="Menu" Grid.Column="0" Grid.Row="0" BorderBrush="Beige"  />
+        <Label Content="{Binding Answered}" Grid.Column="0" Grid.Row="0" BorderBrush="Beige" ContentStringFormat="Kérdések megválaszolva: {0}" />
         <ProgressBar x:Name="pb_ero" Grid.Column="1" Grid.Row="0" Minimum="0" Maximum="100" Value="{Binding Ero}" BorderBrush="Beige" AutomationProperties.HelpText="Ero"  />
         <ProgressBar x:Name="pb_tudas" Grid.Column="2" Grid.Row="0" Minimum="0" Maximum="100" Value="{Binding Tudas}" BorderBrush="Beige" />
         <ProgressBar x:Name="pb_motivaltsag" Grid.Column="3" Grid.Row="0" Minimum="0" Maximum="100" Value="{Binding Motiv}" BorderBrush="Beige" />

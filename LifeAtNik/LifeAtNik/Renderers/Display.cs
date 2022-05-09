@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using LifeAtNik.Logics;
 using System.Timers;
+using System.Threading;
 
 namespace LifeAtNik.Renderers
 {
@@ -29,9 +30,6 @@ namespace LifeAtNik.Renderers
         {
             this.model = model;
         }
-
-
-
         bool step_down = false;
         bool step_up = false;
         bool step_left = false;
@@ -52,9 +50,10 @@ namespace LifeAtNik.Renderers
                 // Kristof -> ezt kiszedtem
                 //drawingContext.DrawRectangle(Brushes.Black, new Pen(Brushes.Black, 0),
                 //    new Rect(0, 0, size.Width, size.Height));
-
+                
 
                 //map kirajzolása
+                
                 for (int i = 0; i < model.GameMatrix.GetLength(0); i++)
                 {
                     for (int j = 0; j < model.GameMatrix.GetLength(1); j++)
@@ -122,12 +121,9 @@ namespace LifeAtNik.Renderers
                 }
 
 
+
+
                 //player kirajzolása
-
-
-
-
-
 
                 if (model.goingDirection == "stay")
                 {
@@ -136,6 +132,7 @@ namespace LifeAtNik.Renderers
                 }
                 else if (model.goingDirection == "up")
                 {
+
                     if (step_up)
                     {
                         ImageBrush playerbrushB = new ImageBrush(new BitmapImage(new Uri(Path.Combine(model.DirPath, "PNGs", "playerB.png"), UriKind.RelativeOrAbsolute)));
@@ -148,6 +145,7 @@ namespace LifeAtNik.Renderers
                         drawingContext.DrawRectangle(playerbrushBR, new Pen(Brushes.Black, 0), new Rect(model.WhereAmI[1] * rectWidth, model.WhereAmI[0] * rectHeight, rectWidth, rectHeight));
                         step_up = true;
                     }
+
                 }
                 else if (model.goingDirection == "down")
                 {
@@ -200,6 +198,8 @@ namespace LifeAtNik.Renderers
                         step_right = true;
                     }
                 }
+
+
             }
         }
     }

@@ -1,0 +1,1 @@
+Mennyi munkát végeztünk, ha egyszer A-ból B-be mentünk, majd B-bõl vissza A-ba?;0;AB;2AB;-AB

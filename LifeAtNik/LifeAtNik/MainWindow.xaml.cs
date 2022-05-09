@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -42,7 +43,6 @@ namespace LifeAtNik
             display.Resize(new Size(grid.ActualWidth, grid.ActualHeight));
             display.InvalidateVisual();
         }
-
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             controller.KeyPressed(e.Key);

@@ -64,10 +64,14 @@ namespace LifeAtNik
             if (int.Parse(b.Tag.ToString()) == szam)
             {
                 //jó válasz
+                MessageBox.Show("Jó válasz!");
+                this.DialogResult = true;
             }
             else
             {
                 //rossz válasz
+                MessageBox.Show("Rossz válasz!");
+                this.DialogResult = false;
             }
         }
     }

@@ -22,6 +22,16 @@ namespace LifeAtNik.Logics
         private int tudas = 0;
         private int motiv = 100;
 
+        private int answered;
+
+        public int Answered
+        {
+            get { return answered; }
+            set { answered = value; }
+        }
+
+        public bool Done { get { return answered == 2; } }
+
         public int Ero { get { return ero; } set { ero = int.Parse(value.ToString()); } }
         public int Tudas { get { return tudas; } set { tudas = int.Parse(value.ToString()); } }
         public int Motiv { get { return motiv; } set { motiv = int.Parse(value.ToString()); } }
@@ -42,6 +52,7 @@ namespace LifeAtNik.Logics
         public GameLogic()
         {
             LoadLevel(Path.Combine(DirPath, "Levels", "aula.lvl"));
+            answered = 0;
         }
 
         public void Move(Direction direction)
@@ -143,7 +154,15 @@ namespace LifeAtNik.Logics
                     }
                     else
                     {
-                        MessageBox.Show("Its Locked!", "Life At Nik");
+                        if (answered == 2)
+                        {
+                            MessageBox.Show("Gratulálok, sikeresen kijártad az egyetemet!");
+                            
+                        }
+                        else
+                        {
+                            MessageBox.Show("Még nem válaszoltál meg minden kérdést!", "Life At Nik");
+                        }
                     }
                 }
                 else if (OnWhichMapAmI == "F01")
@@ -159,7 +178,12 @@ namespace LifeAtNik.Logics
             {
                 // FightWindow megnyitása
                 FightWindow asd = new FightWindow(OnWhichMapAmI);
-                asd.Show();
+                bool valasz = (bool)asd.ShowDialog();
+                if (valasz)
+                {
+                    answered++;
+                    GameMatrix[i, j] = TileType.floor;
+                }
             }
             else if (GameMatrix[i, j] == TileType.end_floor)
             {
