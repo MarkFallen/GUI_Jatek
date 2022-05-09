@@ -1,0 +1,3 @@
+Határozza meg az $$xy'+y=\sin x$$ differenciálegyenlet általános megoldását! Szintaktika: sin(x), cos(x), (3x^2+4)/x.;(C-cos(x))/x;(C-sin(x))/x;(C-cos(x))*x;(C-sin(x))*x
+Homogén-e az alábbi lineáris differenciálegyenlet? \[y''-3xy'+4x^2y-2x^3=0\];Hamis;Igaz;Talán;Nem tudom;
+Milyen értéket vesz fel az \[y'-\frac{y}{x}=\frac{1}{x},\qquad y(1)=2\] kezdeti érték probléma megoldása az \(x=5\) helyen?;14;12;13;15

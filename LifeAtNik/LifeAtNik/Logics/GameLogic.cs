@@ -1,9 +1,12 @@
 ﻿using LifeAtNik.Enums;
 using LifeAtNik.Interface;
+using Microsoft.Toolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,8 +14,10 @@ using System.Windows;
 namespace LifeAtNik.Logics
 {
 
-    public class GameLogic : IGameControl, IGameModel
+    public class GameLogic : ObservableObject, IGameControl, IGameModel, INotifyPropertyChanged
     {
+        
+
         //külön mátrixot használunk a map-nek meg a playernek, meg az npc-knek
 
         private string OnWhichMapAmI = "aula";
@@ -30,10 +35,19 @@ namespace LifeAtNik.Logics
             set { answered = value; }
         }
 
-        public bool Done { get { return answered == 2; } }
+        public bool Done { get { return answered == 4; } }
+        // TODO => go tom the next level
 
         public int Ero { get { return ero; } set { ero = int.Parse(value.ToString()); } }
-        public int Tudas { get { return tudas; } set { tudas = int.Parse(value.ToString()); } }
+        public int Tudas { 
+            get { 
+                return tudas; 
+            } 
+            set { 
+                tudas = int.Parse(value.ToString()); 
+                OnPropertyChanged("tudas"); 
+            } 
+        }
         public int Motiv { get { return motiv; } set { motiv = int.Parse(value.ToString()); } }
 
         public string goingDirection { get { return GoingDirection; } }
@@ -177,12 +191,16 @@ namespace LifeAtNik.Logics
             else if (GameMatrix[i, j] == TileType.enemy)
             {
                 // FightWindow megnyitása
+                //GameLogic dummy = this;
+                //FightWindow asd = new FightWindow(OnWhichMapAmI, ref dummy);
                 FightWindow asd = new FightWindow(OnWhichMapAmI);
                 bool valasz = (bool)asd.ShowDialog();
                 if (valasz)
                 {
                     answered++;
+                    tudas += 25;
                     GameMatrix[i, j] = TileType.floor;
+                    NotifyPropertyChanged();
                 }
             }
             else if (GameMatrix[i, j] == TileType.end_floor)
@@ -247,6 +265,33 @@ namespace LifeAtNik.Logics
             }
         }
 
-        
+        //public event PropertyChangedEventHandler PropertyChanged;
+
+        //protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
+        //{
+        //    if (object.Equals(storage, value)) return false;
+        //    storage = value;
+        //    this.OnPropertyChaned(propertyName);
+        //    return true;
+        //}
+
+        //private void OnPropertyChaned(string propertyName)
+        //{
+        //    var eventHandler = this.PropertyChanged;
+        //    if (eventHandler != null)
+        //        eventHandler(this, new PropertyChangedEventArgs(propertyName));
+        //}
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+
     }
 }

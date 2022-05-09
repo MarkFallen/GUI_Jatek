@@ -24,10 +24,11 @@ namespace LifeAtNik
     public partial class MainWindow : Window
     {
         GameController controller;
+        GameLogic logic;
         public MainWindow()
         {
             InitializeComponent();
-            GameLogic logic = new GameLogic();
+            logic = new GameLogic();
             display.SetupModel(logic);
             controller = new GameController(logic);
         }

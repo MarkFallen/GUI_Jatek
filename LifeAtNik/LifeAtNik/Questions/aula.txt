@@ -1,1 +1,12 @@
 Mennyi munkát végeztünk, ha egyszer A-ból B-be mentünk, majd B-bõl vissza A-ba?;0;AB;2AB;-AB
+A szomszédsági mátrix mire alkalmas?;Kört tartalmazó gráfok tárolására;Lehetséses utat tartalmazó gráf tárolására;Fa gráf tárolására;Teljes gráfok tárolására
+Mire alkalmas a szomszédsági mátrix?;Irányított gráfok tárolására;Irányítatlan gráfok tárolására;Vegyes gráfok tárolására;Hipergráf tárolására
+Mi történik B-fa elem törlésekor ha a gyökérelem elemszáma t-1 lesz?;Semmi;Hibára fut;Megmarad az utolsó elem;Kihagy egy lépsést
+Mely állítások igazak Prim minimális feszítõfát elõállító algoritmusára?;Negatív körök esetén a módszer nem alkalmazható.;;Csak negatív körök esetén a módszer alkalmazható.;Csak utaknál alkalmazható;Csak feszítõfában alkalmazható
+Mely állítás igaz a B-fára?;Mindig kiegyensúlyozott;Sose kiegyensúlyozott;Mindig van benne kör;Mindig van benne feszítõfa
+A 0-1 hátizsák problémára adott mohó elvû megoldás?;Lehet optimális, de nem biztos;Optimális,Rossz módszer rá,Nem tud megoldást adni rá
+Gráfok szomszédsági listában való tárolásával ...; irányított és irányítatlan is tárolható; egyik sem tárolható vele; csak irányított tárolható vele; csak irányítattlan tárolgható vele
+Mely állítás igaz a B-fára?;Egy csomópontban több kulcs is lehet;Egy csomóponban csak egy kulcs lehet;Egy csomópontban nincs kulcs,Csak japánban nõ
+Mely állítás igaz a B-fára?;Egy beszúrt elem csak levélelembe kerülhet;Egy beszúrt elem csak gyökérelembe kerülhet;Egy beszúrt elem bárhova kerülhet;Egy beszúrt sehova se kerülhet
+Mely állítás igaz a B-fára?;Egy csomópontnak több gyermeke is lehet;Egy csomópontnak csak egy gyermeke lehet;Egy csomópontnak nincsenek gyerekei;Nincsenek benne csomópontok
+Az alábbiak közül mi az ideális hasítófüggvény jellemzõje;Véletlenszerûen ossza szét a kulcsokat;Egy séma alapján osztja a kulcsokat;Nem oszt kulcsokat, Nem tudom
