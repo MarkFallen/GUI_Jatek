@@ -44,7 +44,7 @@ namespace LifeAtNik.Renderers
             if (model != null && size.Width > 50 && size.Height > 50)
             {
                 double rectWidth = size.Width / model.GameMatrix.GetLength(1);
-                double rectHeight = size.Height / model.GameMatrix.GetLength(0);
+                double rectHeight = size.Height / model.GameMatrix.GetLength(0)-4;
 
 
                 // Kristof -> ezt kiszedtem

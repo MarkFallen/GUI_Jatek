@@ -22,8 +22,11 @@ namespace LifeAtNik
     {
         static Random r = new Random();
         int szam;
+        GameLogic gamelogic;
+        //public FightWindow(string map, ref GameLogic gamelogic)
         public FightWindow(string map)
         {
+            //this.gamelogic = gamelogic;
             InitializeComponent();
             QuestionLogic qlogic = new QuestionLogic();
             Exercise e = qlogic.GiveQuestion(map);
@@ -66,6 +69,10 @@ namespace LifeAtNik
                 //jó válasz
                 MessageBox.Show("Jó válasz!");
                 this.DialogResult = true;
+                //gamelogic.Tudas ++;
+                //gamelogic.Answered++;
+                
+                
             }
             else
             {
