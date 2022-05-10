@@ -37,6 +37,11 @@ namespace LifeAtNik.Logics
             }
         }
 
+        private bool f01 = false;
+        private bool aula = false;
+        private bool first = false;
+        private bool first1 = false;
+
         public bool Done { get { return answered == 4; } }
         // TODO => go tom the next level
 
@@ -133,25 +138,34 @@ namespace LifeAtNik.Logics
                 WhereAmI[0] = i;
                 WhereAmI[1] = j;
             }
-            else if (GameMatrix[i, j] == TileType.levelswap)
-            {
-
-                //TODO
-                LoadLevel("lol");
-            }
             else if (GameMatrix[i, j] == TileType.stairs_end)
             {
 
                 if (OnWhichMapAmI == "aula")
                 {
                     OnWhichMapAmI = "first_floor";
-                    LoadLevel(Path.Combine(DirPath, "Levels", "first_floor.lvl"));
+                    
+                    if (first)
+                    {
+                        LoadLevel(Path.Combine(DirPath, "Levels", "first_floorDone.lvl"));
+                    }
+                    else
+                    {
+                        LoadLevel(Path.Combine(DirPath, "Levels", "first_floor.lvl"));
+                    }
                     //LoadLevel(Path.Combine(DirPath, "Levels", "lol.lvl"));
                 }
                 else if (OnWhichMapAmI == "first_floor")
                 {
                     OnWhichMapAmI = "aula";
-                    LoadLevel(Path.Combine(DirPath, "Levels", "aula.lvl"));
+                    if (aula)
+                    {
+                        LoadLevel(Path.Combine(DirPath, "Levels", "aulaDone.lvl"));
+                    }
+                    else
+                    {
+                        LoadLevel(Path.Combine(DirPath, "Levels", "aula.lvl"));
+                    }
                     WhereAmI[0] = 3;
                     WhereAmI[1] = 17;
                 }
@@ -165,7 +179,15 @@ namespace LifeAtNik.Logics
                     if (i == 1 || j == 15)
                     {
                         OnWhichMapAmI = "F01";
-                        LoadLevel(Path.Combine(DirPath, "Levels", "F01.lvl"));
+                        
+                        if (f01)
+                        {
+                            LoadLevel(Path.Combine(DirPath, "Levels", "F01Done.lvl"));
+                        }
+                        else
+                        {
+                            LoadLevel(Path.Combine(DirPath, "Levels", "F01.lvl"));
+                        }
                     }
                     else
                     {
@@ -183,7 +205,15 @@ namespace LifeAtNik.Logics
                 else if (OnWhichMapAmI == "F01")
                 {
                     OnWhichMapAmI = "aula";
-                    LoadLevel(Path.Combine(DirPath, "Levels", "aula.lvl"));
+                    if (aula)
+                    {
+                        LoadLevel(Path.Combine(DirPath, "Levels", "aulaDone.lvl"));
+                    }
+                    else
+                    {
+                        LoadLevel(Path.Combine(DirPath, "Levels", "aula.lvl"));
+                    }
+                    
                     WhereAmI[0] = 1;
                     WhereAmI[1] = 15;
                 }
@@ -200,6 +230,21 @@ namespace LifeAtNik.Logics
                 {
                     answered++;
                     tudas += 25;
+                    switch (OnWhichMapAmI)
+                    {
+                        case "aula":
+                            aula = true;
+                            break;
+                        case "F01":
+                            f01 = true;
+                            break;
+                        case "first_floor":
+                            first = true;
+                            break;
+                        case "first_floor1":
+                            first1 = true;
+                            break;
+                    }
                     GameMatrix[i, j] = TileType.floor;
                     NotifyPropertyChanged();
                 }
@@ -209,14 +254,30 @@ namespace LifeAtNik.Logics
                 if (OnWhichMapAmI == "first_floor")
                 {
                     OnWhichMapAmI = "first_floor1";
-                    LoadLevel(Path.Combine(DirPath, "Levels", "first_floor1.lvl"));
+                    if (first1)
+                    {
+                        LoadLevel(Path.Combine(DirPath, "Levels", "first_floor1Done.lvl"));
+                    }
+                    else
+                    {
+                        LoadLevel(Path.Combine(DirPath, "Levels", "first_floor1.lvl"));
+                    }
+                    
                     WhereAmI[0] = 1;
                     WhereAmI[1] = 7;
                 }
                 else if (OnWhichMapAmI == "first_floor1")
                 {
                     OnWhichMapAmI = "first_floor";
-                    LoadLevel(Path.Combine(DirPath, "Levels", "first_floor.lvl"));
+                    if (first)
+                    {
+                        LoadLevel(Path.Combine(DirPath, "Levels", "first_floorDone.lvl"));
+                    }
+                    else
+                    {
+                        LoadLevel(Path.Combine(DirPath, "Levels", "first_floor.lvl"));
+                    }
+                    
                     WhereAmI[0] = 10;
                     WhereAmI[1] = 7;
                 }

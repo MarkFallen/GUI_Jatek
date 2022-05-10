@@ -68,10 +68,10 @@ namespace LifeAtNik.Logics
         }
         public void LoadQuestions()
         {
-            string[] f01qs = File.ReadAllLines(Path.Combine(DirPath, "Questions", "f01.txt"), Encoding.UTF8);
-            string[] aulaqs = File.ReadAllLines(Path.Combine(DirPath, "Questions", "aula.txt"), Encoding.UTF8);
-            string[] firstqs = File.ReadAllLines(Path.Combine(DirPath, "Questions", "first_floor.txt"), Encoding.UTF8);
-            string[] first1qs = File.ReadAllLines(Path.Combine(DirPath, "Questions", "first_floor1.txt"),Encoding.UTF8);
+            string[] f01qs = File.ReadAllLines(Path.Combine(DirPath, "Questions", "f01.txt"), Encoding.Latin1);
+            string[] aulaqs = File.ReadAllLines(Path.Combine(DirPath, "Questions", "aula.txt"), Encoding.Latin1);
+            string[] firstqs = File.ReadAllLines(Path.Combine(DirPath, "Questions", "first_floor.txt"), Encoding.Latin1);
+            string[] first1qs = File.ReadAllLines(Path.Combine(DirPath, "Questions", "first_floor1.txt"),Encoding.Latin1);
 
             for (int i = 0; i < f01qs.Length; i++)
             {
