@@ -18,7 +18,7 @@ namespace LifeAtNik.Logics
     {
         
 
-        //külön mátrixot használunk a map-nek meg a playernek, meg az npc-knek
+        //külön mátrixot használunk a map-nek meg a playernek
 
         private string OnWhichMapAmI = "aula";
         private string GoingDirection = "stay";
@@ -32,7 +32,9 @@ namespace LifeAtNik.Logics
         public int Answered
         {
             get { return answered; }
-            set { answered = value; }
+            set { answered = value;
+                OnPropertyChanged("answered");
+            }
         }
 
         public bool Done { get { return answered == 4; } }
@@ -54,7 +56,6 @@ namespace LifeAtNik.Logics
 
         public TileType[,] GameMatrix { get; set; } //map
         public int[,] CharMatrix { get; set; } //player -- ahol 1es van a mátrixban, ott van a player, egyébként 0
-        public TileType[,] NpcMatrix { get; set; } //npck
         public int[] WhereAmI { get; set ; }
 
         //ezzel fogjuk tudni elérni a mappákat amiket létrehoztunk a displaynél pl: path + "/PNGs" 
@@ -168,7 +169,7 @@ namespace LifeAtNik.Logics
                     }
                     else
                     {
-                        if (answered == 2)
+                        if (answered == 4)
                         {
                             MessageBox.Show("Gratulálok, sikeresen kijártad az egyetemet!");
                             

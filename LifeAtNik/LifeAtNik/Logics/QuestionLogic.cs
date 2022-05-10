@@ -45,7 +45,7 @@ namespace LifeAtNik.Logics
             f01 = new List<Exercise>();
             aula = new List<Exercise>();
             first = new List<Exercise>();
-            first= new List<Exercise>();
+            first1= new List<Exercise>();
             LoadQuestions();
         }
 

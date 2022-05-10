@@ -1,0 +1,5 @@
+Mely állítás igaz a B-fára?;Egy csomópontban több kulcs is lehet;Egy csomóponban csak egy kulcs lehet;Egy csomópontban nincs kulcs;Csak japánban nõ
+Mely állítás igaz a B-fára?;Egy beszúrt elem csak levélelembe kerülhet;Egy beszúrt elem csak gyökérelembe kerülhet;Egy beszúrt elem bárhova kerülhet;Egy beszúrt sehova se kerülhet
+Mely állítás igaz a B-fára?;Egy csomópontnak több gyermeke is lehet;Egy csomópontnak csak egy gyermeke lehet;Egy csomópontnak nincsenek gyerekei;Nincsenek benne csomópontok
+Az alábbiak közül mi az ideális hasítófüggvény jellemzõje;Véletlenszerûen ossza szét a kulcsokat;Egy séma alapján osztja a kulcsokat;Nem oszt kulcsokat; Nem tudom
+Mely állítás igaz a B-fára?;Mindig kiegyensúlyozott;Sose kiegyensúlyozott;Mindig van benne kör;Mindig van benne feszítõfa

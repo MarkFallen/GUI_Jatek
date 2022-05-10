@@ -1,25 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\juhas\\Source\\Repos\\Krlst0FF\\GUI_20212202_Y862SF\\LifeAtNik\\LifeAtNik\\LifeAtNik.csproj": {}
+    "C:\\Users\\Rendszergazda\\Source\\Repos\\Krlst0FF\\GUI_20212202_Y862SF\\LifeAtNik\\LifeAtNik\\LifeAtNik.csproj": {}
   },
   "projects": {
-    "C:\\Users\\juhas\\Source\\Repos\\Krlst0FF\\GUI_20212202_Y862SF\\LifeAtNik\\LifeAtNik\\LifeAtNik.csproj": {
+    "C:\\Users\\Rendszergazda\\Source\\Repos\\Krlst0FF\\GUI_20212202_Y862SF\\LifeAtNik\\LifeAtNik\\LifeAtNik.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\juhas\\Source\\Repos\\Krlst0FF\\GUI_20212202_Y862SF\\LifeAtNik\\LifeAtNik\\LifeAtNik.csproj",
+        "projectUniqueName": "C:\\Users\\Rendszergazda\\Source\\Repos\\Krlst0FF\\GUI_20212202_Y862SF\\LifeAtNik\\LifeAtNik\\LifeAtNik.csproj",
         "projectName": "LifeAtNik",
-        "projectPath": "C:\\Users\\juhas\\Source\\Repos\\Krlst0FF\\GUI_20212202_Y862SF\\LifeAtNik\\LifeAtNik\\LifeAtNik.csproj",
-        "packagesPath": "C:\\Users\\juhas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\juhas\\Source\\Repos\\Krlst0FF\\GUI_20212202_Y862SF\\LifeAtNik\\LifeAtNik\\obj\\",
+        "projectPath": "C:\\Users\\Rendszergazda\\Source\\Repos\\Krlst0FF\\GUI_20212202_Y862SF\\LifeAtNik\\LifeAtNik\\LifeAtNik.csproj",
+        "packagesPath": "C:\\Users\\Rendszergazda\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rendszergazda\\Source\\Repos\\Krlst0FF\\GUI_20212202_Y862SF\\LifeAtNik\\LifeAtNik\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "F:\\Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\juhas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Rendszergazda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0-windows7.0"
@@ -67,7 +67,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

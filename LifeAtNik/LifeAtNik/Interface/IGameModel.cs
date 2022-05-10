@@ -11,7 +11,6 @@ namespace LifeAtNik.Interface
     {
         TileType[,] GameMatrix { get; set; }
         int[,] CharMatrix { get; set; }
-        TileType[,] NpcMatrix { get; set; }
         int[] WhereAmI { get; set; }
         string DirPath { get; }
         string goingDirection { get; }

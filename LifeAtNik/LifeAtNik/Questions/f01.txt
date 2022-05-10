@@ -1,6 +1,6 @@
-bsHogy írjuk fel a 7-et 2-es számrendszerben?;0111;1000;1011;0101
+Hogy írjuk fel a 7-et 2-es számrendszerben?;0111;1000;1011;0101
 Mi a 0 integrálja?;0;1;c;x
 Mi a csomóponti törvény?; a csomópontban találkozó áramok algebrai összege (minden idõpillanatban) nulla.;a csomópontban találkozó áramok algebrai összege (minden idõpillanatban) egy.;a csomópontban találkozó feszültségek algebrai összege (minden idõpillanatban) nulla.;a csomópontban találkozó feszültségek algebrai összege (minden idõpillanatban) egy.
 Igaz-e? Az oszthatósági reláció a természetes számok halmazán parciális rendezés.;Igaz;Hamis;Lehet igaz;Nem tudom
 Az alábbi programnyelvek közül melyik tartozik a C típusú nyelvek családjába a C#-hoz hasonlóan?;Java;Pyton;SQL;Assembly
-Melyik rendezõ algoritmusok képesek bizonyos esetekben akár O(n) idõben végrehajtani a rendezést?;Beillesztéses rendezés;Buborék rendezés,Cserés rendezés;Maximumkiválasztásos rendezés
+Melyik rendezõ algoritmusok képesek bizonyos esetekben akár O(n) idõben végrehajtani a rendezést?;Beillesztéses rendezés;Buborék rendezés;Cserés rendezés;Maximumkiválasztásos rendezés
